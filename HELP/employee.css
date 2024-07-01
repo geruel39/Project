@@ -1,0 +1,268 @@
+body{
+    background-color:#FBF8DD;
+    width: 100%;
+    overflow-x: hidden;
+    padding-bottom: 50px;
+
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.navigation {
+    position: sticky;
+    top: 0;
+    background-color: #40A578;
+    height: 50px;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    mix-blend-mode: color-dodge;
+}
+
+.logo span {
+    color: black;
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(to right,#E6FF94,#9DDE8B);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px 1px 1px;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.links a {
+    color: #FBF8DD;
+    font-weight: bold;
+}
+
+.sideprofile {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.sideprofile img {
+    width: 30px;
+    height: 30px;
+    border: 1px solid;
+    border-radius: 100%;
+}
+
+.sideprofile span {
+    padding-left: 5px;
+    color: #E9C874;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 30px;
+    font-size: 1.5rem;
+    color: #FBF8DD;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: fixed;
+    max-height: 0px;
+    right: 0px;
+    width: 130px;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 0 0 0 rgba(0,0,0,0.75);
+    display: grid;
+    place-items: center;
+    background-color: #d9d9d9;
+    overflow: hidden;
+    transition: all .25s ease-in-out;
+    z-index: 1000;
+}
+
+.dropdown.drop {
+    box-shadow: -5px 6px 13px -3px rgba(0,0,0,0.75);
+    max-height: 300px;
+}
+
+.dropdown a{
+    text-decoration: none;
+    color: transparent;
+    font-family: 'Poppins',sans-serif ;
+    font-weight: 600;
+    text-shadow: 1px 1px black;
+    transition: all 0.25s ease-in-out;
+}
+
+.dropdown a:hover {
+    padding-right: 10px;
+}
+
+.animated-link {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+.animated-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 3px;
+    right: 0;
+    background: #E9C874;
+    transition: width 0.4s ease, right 0.4s ease;
+}
+
+.animated-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.dashbutton {
+    background-color: #2f969b5b;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px 10px 15px;
+}
+
+.dashbutton span {
+    font-weight: bold;
+    outline: 0px solid white;
+    border-radius: 30px;
+    background-color: transparent;
+    height: 25px;
+    width: 80px;
+    cursor: pointer;
+    transition: outline 0.1s ease-in-out;
+}
+
+.dashbutton span:hover {
+    outline: 5px solid white;
+    background-color: white;
+}
+
+.helpcontent {
+    box-shadow: -1px 1px 5px 0px rgba(47,150,155,0.75);
+    border: 1px solid #2f969b5b;
+    border-radius: 10px;
+    margin-top: 80px;
+    width: 300px;
+    height: 340px;
+}
+
+.helpcontent2 {
+    box-shadow: -1px 1px 5px 0px rgba(47,150,155,0.75);
+    border: 1px solid #2f969b5b;
+    border-radius: 10px;
+    margin-top: 30px;
+    width: 300px;
+    height: 340px;
+}
+
+
+.help {
+    font-size: 60px;
+    position: relative;
+    top: 50px;
+    font-family: Roboto, sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: rgb(0, 0, 0);
+}
+
+.helpcontent img{
+    height: 100px;
+    width: 100px;
+    margin-top: 30px;
+}
+
+.helpcontent h5{
+    font-size: 25px;
+    margin-top: 20px;
+    font-weight: 350px;
+}
+
+.helpcontent2 img{
+    height: 100px;
+    width: 100px;
+    margin-top: 30px;
+}
+
+.helpcontent2 h5{
+    font-size: 25px;
+    margin-top: 20px;
+    font-weight: 350px;
+}
+
+.horizontal {
+    margin: 0 auto;
+    border-top: 1px solid rgb(134, 134, 134);
+    width: 50px;
+    margin-top: 20px;
+}
+
+.helpcontent p {
+    margin-top: 15px;
+}
+
+.helpcontent2 p {
+    margin-top: 15px;
+}
+
+.modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100% - 1rem);
+}
+
+@font-face{
+    font-family: Roboto;
+    src: url(/fonts/Roboto-Black.ttf);
+}
+
+
+@media only screen and (max-width: 1366px){
+    .dashcontent{
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    .dashcontent{
+        width: 200px;
+        height: 200px;
+    }
+}
