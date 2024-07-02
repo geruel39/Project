@@ -6,26 +6,106 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 	<link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
-	<link rel="stylesheet" href="employee.css">
-</head>
-<body class="bg-smoke">
-    <div class="row navigation">
-        <div class="col-2 logo"><a href="AdminDash.html"><img src="profiles/logo.png" alt="Temsiz"></a><span>TEMSIZ</span></div>
-        <div class="col-3 links">
-            <a href="Dashboard.html" class="animated-link">Dashboard</a>
-            <a href="Profile.html" class="animated-link">Profile</a>
-            <a href="Task.html" class="animated-link">Task</a>
+	<link rel="stylesheet" href="css/help.css">
+    </head>
+<body class="bg-light">
+    <div style="position: fixed;top: 30px;left: 30px;color: white;">
+        <button class="btn btn-danger"><a href="Dashboard.php" style="color: white;"> Back </a></button>
+    </div>
+    <div class="row text-center d-flex justify-content-center align-items-center">
+        <div class="help">
+            <p>Hi, how can we help?</p>
         </div>
-        <div class="col-6 sideprofile"><img src="profiles/3.jpg"> <span>Employee Name</span></div>
-        <div class="col menu"><i class="lni lni-menu" id="drop"></i></div>
+
+        <div class="col-3 helpcontent mx-2">
+            <img src="profiles/clipboard.svg" class="img-fluid">
+            <h5>Managing Task</h5>
+            <hr class="horizontal">
+            <p>Having Trouble Managing Tasks?</p>
+            <button class="btn btn-primary" onclick="showPopup('Managing Task', 'Manage your Task by going to the task page')">Learn More</button>
+        </div>
+
+        <div class="col-3 helpcontent mx-2">
+            <img src="profiles/person-badge.svg" class="img-fluid">
+            <h5>Profile Picture</h5>
+            <hr class="horizontal">
+            <p>How do I change my Profile Picture?</p>
+            <button class="btn btn-primary" onclick="showPopup('Profile Picture', 'Go to the profile page and click the edit profile button, then a popup will appear and you have to choose a file and click save.')">Learn More</button>
+        </div>
+
+        <div class="col-3 helpcontent mx-2">
+            <img src="profiles/file-richtext.svg" class="img-fluid">
+            <h5>Personal Information</h5>
+            <hr class="horizontal">
+            <p>Editing your Personal Information?</p>
+            <button class="btn btn-primary" onclick="showPopup('Personal Information', 'Go to the profile page and click edit profile and a popup will appear where you have to fillup or edit information there and you should be good by clicking save.')">Learn More</button>
+        </div>
+
+        <div class="col-3 helpcontent mx-2">
+            <img src="profiles/file-medical.svg" class="img-fluid">
+            <h5>User Password</h5>
+            <hr class="horizontal">
+            <p>Changing and Resetting?</p>
+            <button class="btn btn-primary" onclick="showPopup('User Password', 'Go to profile page and click the edit profile button and in there you will be a able to change your password by filling it up. Resetting password will requires an approval from an admin get a request first then wait for the admin to accept the request.')">Learn More</button>
+        </div>
     </div>
-    <div class="dropdown">
-        <br><button type="button" class="btn btn-success">Active</button><br>
-        <a href="Help.html"><i class="lni lni-help"></i> Help</a><br>
-        <a href="About.html"><i class="lni lni-magnifier"></i> About</a><br>
-        <a href="Logout"><i class="lni lni-exit"></i> Logout</a><br> 
+
+    <div class="row text-center d-flex justify-content-center align-items-center">
+        <div class="col-3 helpcontent2 mx-2">
+            <img src="profiles/clipboard.png" class="img-fluid">
+            <h5>Check List</h5>
+            <hr class="horizontal">
+            <p>Want to know how does it work?</p>
+            <button class="btn btn-primary" onclick="showPopup('Check List', 'Task Page checklist works by creating task there then you can click the check button if you are done with some tasks.')">Learn More</button>
+        </div>
+
+        <div class="col-3 helpcontent2 mx-2">
+            <img src="profiles/dashboard.png" class="img-fluid">
+            <h5>Dashboard</h5>
+            <hr class="horizontal">
+            <p>Want to know how to navigate it?</p>
+            <button class="btn btn-primary" onclick="showPopup('Dashboard', 'Dashboard is where you can see the users overall tasks, projects and it should contain the overall information of the task page.')">Learn More</button>
+        </div>
+
+        <div class="col-3 helpcontent2 mx-2">
+            <img src="profiles/profile.png" class="img-fluid">
+            <h5>Profile Page</h5>
+            <hr class="horizontal">
+            <p>Want to see your profile?</p>
+            <button class="btn btn-primary" onclick="showPopup('Profile Page', 'Profile Page is where you can see your personal information, Employee ID, and your position in the company.')">Learn More</button>
+        </div>
+
+        <div class="col-3 helpcontent2 mx-2">
+            <img src="profiles/skills.png" class="img-fluid">
+            <h5>Account Settings</h5>
+            <hr class="horizontal">
+            <p>Information about your account?</p>
+            <button class="btn btn-primary" onclick="showPopup('Account Settings', 'This is where you can edit your personal information, password, profile picture.')">Learn More</button>
+        </div>
     </div>
-    
-    <script src="function.js"></script>
+
+    <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="helpModalLabel">Help</h5>
+                </div>
+                <div class="modal-body">
+                    <p id="modalContent"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/help.js"></script>
 </body>
 </html>

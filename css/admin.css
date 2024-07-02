@@ -1,0 +1,573 @@
+
+body{
+    background-color: #455370;
+    width: 100%;
+    overflow-x: hidden;
+
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navigation {
+    position: sticky;
+    top: 0;
+    background: rgba(163, 67, 67, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    max-height: 200px;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    mix-blend-mode: color-dodge;
+}
+
+.logo span {
+    color: black;
+    font-size: 1.6rem;
+    font-weight: bold;
+    background: linear-gradient(to right,#E6FF94,#006769);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px 1px 1px;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.links a {
+    color: #FBF8DD;
+    font-weight: bold;
+    text-wrap: nowrap;
+    margin-right: 10px;
+}
+
+.sideprofile {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.sideprofile img {
+    width: 30px;
+    height: 30px;
+    border: 1px solid;
+    border-radius: 100%;
+}
+
+.sideprofile span {
+    padding-left: 5px;
+    color: #E9C874;
+    font-weight: bold;
+    text-wrap: nowrap;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 30px;
+    font-size: 1.5rem;
+    color: #FBF8DD;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: absolute;
+    max-height: 0px;
+    right: 0%;
+    width: 130px;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 0 0 0 rgba(0,0,0,0.75);
+    display: grid;
+    place-items: center;
+    background-color: #d9d9d9;
+    overflow: hidden;
+    transition: all .25s ease-in-out;
+    z-index: 1000;
+}
+
+.dropdown.drop {
+    box-shadow: -5px 6px 13px -3px rgba(0,0,0,0.75);
+    max-height: 300px;
+}
+
+.dropdown a{
+    text-decoration: none;
+    color: transparent;
+    font-family: 'Poppins',sans-serif ;
+    font-weight: 600;
+    text-shadow: 1px 1px black;
+    transition: all 0.25s ease-in-out;
+}
+
+.dropdown a:hover {
+    padding-right: 10px;
+}
+
+.animated-link {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+.animated-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 3px;
+    right: 0;
+    background: #E9C874;
+    transition: width 0.4s ease, right 0.4s ease;
+}
+
+.animated-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* DASHBOARD */
+/* DASHBOARD */
+
+.df {
+    background: rgba(233, 200, 116, 0.47);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(233, 200, 116, 0.3);
+    display: grid;
+    transition: all 0.2s;
+    color: #fff;
+}
+
+.df p {
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.activep {
+    display: grid;
+    align-self: center;
+    justify-self: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    outline: 2px solid #0000001f;
+}
+
+.activep p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.circle {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 75px;
+    height: 75px;
+    background: rgba(233, 200, 116, 0.8);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(233, 200, 116, 0.3);
+    border-radius: 50%;
+    color: #000;
+}
+
+.ds {
+    background-color: #757573;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    color: #fff;
+
+}
+
+.dsip {
+    border-right: 2px solid;
+    padding-right: 15px;
+}
+
+.dsip p {
+    font-weight: 600;
+}
+
+.dsip p + p {
+    font-size: 2rem;
+}
+
+.dt {
+    background: rgba(192, 214, 232, 0.37);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(192, 214, 232, 0.3);
+    color: #fff;
+}
+
+.dt p {
+    font-weight: 600;
+}
+
+.dt p + p{
+    font-size: 2rem;
+}
+
+/* EMPLOYEE LIST*/
+
+.listtable{
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.listtable tbody tr:hover{
+    background-color: #00000083;
+}
+
+/* EMPLOYEE TASK */
+/* EMPLOYEE TASK */
+
+.tasktypea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3px;
+}
+
+.tasktypea div{
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.tasktypea a {
+    color: #fff;
+}
+
+.tasktype {
+    font-weight: bold;
+    background-color: rgb(192, 214, 232,0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.board {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 10px;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.board input {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.board input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.board textarea {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.board textarea:focus {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.board label {
+    font-weight: 600;
+}
+
+.party {
+    margin-top: 3px;
+}
+
+.justlabel {
+    position: relative;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: larger;
+    font-weight: bold;
+    z-index: -1;
+}
+
+.id_input{
+    margin-top: 5px;
+    background: rgba(255, 255, 255, 0.11);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.id_input:focus{
+    inset: 1px 1px transparent;
+}
+
+.tasklist {
+    height: 80vh;
+    max-height: 600px;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.tasklist table {
+    border: 1px white;
+    width: 100%;
+    color: white;
+}
+
+.tasklist table tbody tr:hover {
+    background-color: #00000038;
+}
+
+.tasklist table a{
+    width: 100%;
+}
+
+.tasklist table tr td{
+    border: 1px white;
+    padding-top: 20px;
+}
+
+.tasklist table tr td + td{
+    padding-top: 25px;
+}
+
+.tasklist img {
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+}
+
+.tasklist p {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* ALL TASK */
+
+.ontop {
+    display: flex;
+    align-items: center;
+}
+
+.taskbox {
+    color: #fff;
+    background: rgba(85, 73, 253, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 10px;
+    overflow: hidden;
+    height: 350px;
+}
+
+.stop{
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    padding: 5px;
+    border-bottom: 1px solid;
+}
+
+.smid {
+    font-weight: 600;
+}
+
+.linebreak {
+    background-color: #A34343;
+    border: 1px solid;
+    height: 3px;
+    margin-bottom: 10px;
+}
+
+.projbox {
+    color: white;
+    background: rgba(255, 104, 104, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    margin-bottom: 10px;
+    overflow: hidden; 
+    height: 350px;
+}
+
+.ptop{
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    padding: 5px;
+    border-bottom: 1px solid;
+}
+
+.pmid {
+    font-weight: 600;
+}
+
+
+
+/* MANAGE ACCOUNTS */
+
+.frow {
+    display: flex;
+    justify-content: space-between;
+}
+
+.addacc {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.addacc input {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: #fff;
+}
+
+.addacc input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.addacc .row {
+    padding: 10px;
+}
+
+.listacc {
+    height: 200px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    overflow: auto;
+    color: white;
+}
+
+.listacc table {
+    width: 100%;
+}
+
+.listacc::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.listacc h5 {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.searchacc {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;    
+}
+
+.searchacc input {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;  
+}
+
+.searchacc input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;  
+}
+
+.lrow {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    height: 200px;
+}
+
+.mstats {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.mstats p {
+    font-weight: 700;
+    font-size: large;
+    color:#fff;
+}
+
+.mstats p + p {
+    font-size: 4rem;
+    text-shadow: 0px 0px #fff;
+}
+
+.mstats a {
+    display: flex;
+    justify-content: end;
+    background: linear-gradient(to right,transparent,#ffffff79);
+    color: #000;
+    font-weight: bold;
+    padding: 3px;
+}
