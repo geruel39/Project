@@ -142,6 +142,15 @@
                             </div>";
 
                             if(isset($_POST["$row[Task_ID]"])){
+
+                              echo"<div style='position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background-color: white;padding:40px;box-shadow: 0px 0px 5px black'>
+                                  <h6>Task Status Updated!</h6>
+                                      <form method='post' action='Task.php' class='text-center'>
+                                          <button type='submit' class='btn btn-success' name='yes'>Ok</button>
+                                      </form>
+                                  </div>";
+                            }
+
                               if($row['Status'] == "Pending"){
                                 mysqli_query($conn, "UPDATE task SET Status = 'Pending' WHERE Task_ID = '$row[Task_ID]'");
                               }
@@ -154,7 +163,7 @@
                               else{
                                 echo"";
                               }
-                            }
+
                           }
                           ?>
                         </div>
@@ -231,7 +240,7 @@
                               <div class='alert alert-success bg-success text-light border-0 alert-dismissible fade show' role='alert'>
                                   <div class='row'>
                                     <div class='col-auto'><h3 style='color: #E6FF94;'>{$row['Task_Title']}</h3></div>
-                                    <div class='col'><button class='btn btn-danger'>{$row['Status']}</button></div>
+                                    <div class='col'><form method='post'><button class='btn btn-{$color}' name='{$row['Task_ID']}'>{$row['Status']}</button></form></div>
                                   </div>
                                   <p style='color: #E6FF94;'>{$row['Task_Description']}</p>
                                   <hr>
