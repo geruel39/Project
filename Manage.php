@@ -194,7 +194,7 @@
             <div class="col-2 border-success  p-2 mstats">   <p>Registered</p>         <p class="text-center"><?php echo$reg?></p>     </div>
             <div class="col-2 border-warning  p-2 mstats">   <p>Not Registered</p>     <p class="text-center"><?php echo$not?></p>      </div>
             <div class="col-2 border-danger  p-2 mstats">    <p>Reset Request</p>       <p class="text-center"><?php echo$reset?></p>     <a href="reset.php">Show</a>    </div>
-            <div class="col-2 border-secondary  p-2 mstats"> <p>Deleted Accounts</p> <p class="text-center"><?php echo$delete?></p>        <a href="#">Show</a>    </div>
+            <div class="col-2 border-secondary  p-2 mstats"> <p>Deleted Accounts</p> <p class="text-center"><?php echo$delete?></p>        <a href="archive.php">Show</a>    </div>
         </div>
     </div>
     

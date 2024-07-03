@@ -143,26 +143,37 @@
 
                             if(isset($_POST["$row[Task_ID]"])){
 
-                              echo"<div style='position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background-color: white;padding:40px;box-shadow: 0px 0px 5px black'>
+                              if($row['Status'] == "Pending"){
+                                mysqli_query($conn, "UPDATE task SET Status = 'Pending' WHERE Task_ID = '$row[Task_ID]'");
+                                echo"<div style='position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background-color: white;padding:40px;box-shadow: 0px 0px 5px black'>
                                   <h6>Task Status Updated!</h6>
                                       <form method='post' action='Task.php' class='text-center'>
                                           <button type='submit' class='btn btn-success' name='yes'>Ok</button>
                                       </form>
                                   </div>";
-                            }
-
-                              if($row['Status'] == "Pending"){
-                                mysqli_query($conn, "UPDATE task SET Status = 'Pending' WHERE Task_ID = '$row[Task_ID]'");
                               }
                               else if($row['Status'] == "Ongoing"){
                                 mysqli_query($conn, "UPDATE task SET Status = 'Ongoing' WHERE Task_ID = '$row[Task_ID]'");
+                                echo"<div style='position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background-color: white;padding:40px;box-shadow: 0px 0px 5px black'>
+                                  <h6>Task Status Updated!</h6>
+                                      <form method='post' action='Task.php' class='text-center'>
+                                          <button type='submit' class='btn btn-success' name='yes'>Ok</button>
+                                      </form>
+                                  </div>";
                               }
                               else if($row['Status'] == "Finished"){
                                 mysqli_query($conn, "UPDATE task SET Status = 'Finished' WHERE Task_ID = '$row[Task_ID]'");
+                                echo"<div style='position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background-color: white;padding:40px;box-shadow: 0px 0px 5px black'>
+                                  <h6>Task Status Updated!</h6>
+                                      <form method='post' action='Task.php' class='text-center'>
+                                          <button type='submit' class='btn btn-success' name='yes'>Ok</button>
+                                      </form>
+                                  </div>";
                               }
                               else{
                                 echo"";
                               }
+                            }
 
                           }
                           ?>
@@ -206,12 +217,30 @@
                             if(isset($_POST["$row[Task_ID]"])){
                               if($row['Status'] == "Pending"){
                                 mysqli_query($conn, "UPDATE task SET Status = 'Ongoing' WHERE Task_ID = '$row[Task_ID]'");
+                                echo"<div style='position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background-color: white;padding:40px;box-shadow: 0px 0px 5px black'>
+                                  <h6>Task Status Updated!</h6>
+                                      <form method='post' action='Task.php' class='text-center'>
+                                          <button type='submit' class='btn btn-success' name='yes'>Ok</button>
+                                      </form>
+                                  </div>";
                               }
                               else if($row['Status'] == "Ongoing"){
                                 mysqli_query($conn, "UPDATE task SET Status = 'Finished' WHERE Task_ID = '$row[Task_ID]'");
+                                echo"<div style='position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background-color: white;padding:40px;box-shadow: 0px 0px 5px black'>
+                                  <h6>Task Status Updated!</h6>
+                                      <form method='post' action='Task.php' class='text-center'>
+                                          <button type='submit' class='btn btn-success' name='yes'>Ok</button>
+                                      </form>
+                                  </div>";
                               }
                               else if($row['Status'] == "Finished"){
                                 mysqli_query($conn, "UPDATE task SET Status = 'Pending' WHERE Task_ID = '$row[Task_ID]'");
+                                echo"<div style='position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background-color: white;padding:40px;box-shadow: 0px 0px 5px black'>
+                                  <h6>Task Status Updated!</h6>
+                                      <form method='post' action='Task.php' class='text-center'>
+                                          <button type='submit' class='btn btn-success' name='yes'>Ok</button>
+                                      </form>
+                                  </div>";
                               }
                             }
                           }

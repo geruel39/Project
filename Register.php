@@ -271,12 +271,12 @@
       if($check == 0){
         echo"<div style='position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);padding: 20px;border-radius: 5px;' class='text-center bg-danger'>
                 <div class='row'>Employee ID is already registered or doesn't exist!</div><br>
-                <div class='row'><a href='Register.php'>CLOSE</a>
+                <div class='row'><a href='Register.php' style='color:white'>CLOSE</a>
             </div>";  
       }else if($password != $repassword){
         echo"<div style='position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);padding: 10px;border-radius: 5px;' class='text-center bg-danger'>
                 <div class='row'>Password do not match!</div><br>
-                <div class='row'><a href='Register.php'>CLOSE</a>
+                <div class='row'><a href='Register.php' style='color:white'>CLOSE</a>
             </div>";
       }
       else{
@@ -298,7 +298,10 @@
 
         mysqli_query($conn, "INSERT INTO info (Employee_ID,Position,picture,Firstname,Lastname,Contact,Email,Address,Type_of_Employment,Working_Days,Working_Hours,Birthday,Gender,Country,Language,Bio) VALUES ('$id','$position','profiles/noprofile.png','$firstname','$lastname','$number','$email','$address','$toe','$wd','$wh','$dob','$gender','$country','$language','No Bio')");
         mysqli_query($conn, "UPDATE accounts SET Password = '$mainpassword', Account_Status = 'Registered' WHERE Employee_ID = '$id'");
-        $notice = "Success";
+        echo"<div style='position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);padding: 20px;border-radius: 5px;color:green' class='text-center bg-danger'>
+              <div class='row'>Success!</div><br>
+              <div class='row'><a href='Register.php' style='color:white'>CLOSE</a>
+            </div>"; 
       }
     }
   }
